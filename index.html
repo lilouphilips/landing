@@ -1,36 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Private Page</title>
+
 <style>
+
 body{
-background:black;
+background:#0f0f0f;
 color:white;
+font-family:Arial, Helvetica, sans-serif;
 text-align:center;
-font-family:Arial;
-padding-top:120px;
+margin:0;
+padding:0;
 }
 
-.btn{
+.container{
+max-width:500px;
+margin:auto;
+padding:30px;
+}
+
+img{
+width:100%;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+h1{
+font-size:24px;
+line-height:1.4;
+}
+
+.button{
+display:inline-block;
 background:#ff2d55;
 padding:16px 30px;
 border-radius:12px;
 color:white;
 text-decoration:none;
 font-size:20px;
+font-weight:bold;
+margin-top:20px;
 }
+
+.timer{
+margin-top:30px;
+font-size:18px;
+opacity:0.9;
+}
+
+.bottom-img{
+margin-top:40px;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>PRIVATE PAGE 🔥</h1>
-<p>Access exclusive content</p>
+<div class="container">
 
-<br>
+<img src="D:\# TRAVAIL OFMKINGS\MODELES\#2.  LILOU\PHOTO\IMG_0928.JPG">
 
-<a class="btn" href="https://onlyfans.com/lilouphilipsv3/c35">ENTER</a>
+<h1>
+Mon abonnement est OFFERT pour les 4 prochaines personnes avant minuit 🎁👇
+</h1>
+
+<a class="button" href="https://onlyfans.com/lilouphilipsv3/c35">
+Plus que deux places gratuites 🔥
+</a>
+
+<div class="timer">
+⏰ Offre expire dans : <span id="countdown"></span>
+</div>
+
+<img class="bottom-img" src="D:\# TRAVAIL OFMKINGS\MODELES\#2.  LILOU\PHOTO\IMG_0928.JPG">
+
+</div>
+
+<script>
+
+function updateCountdown(){
+
+let now = new Date();
+
+let midnight = new Date();
+midnight.setHours(24,0,0,0);
+
+let diff = midnight - now;
+
+let hours = Math.floor(diff / (1000*60*60));
+let minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+let seconds = Math.floor((diff % (1000*60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+hours + "h " + minutes + "m " + seconds + "s";
+
+}
+
+setInterval(updateCountdown,1000);
+
+</script>
 
 </body>
 </html>
